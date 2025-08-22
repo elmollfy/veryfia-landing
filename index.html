@@ -40,16 +40,36 @@
     <img src="https://dummyimage.com/600x300/ccc/000&text=Diagrama+de+funcionamiento" alt="Diagrama explicativo">
   </section>
 
-  <section id="contacto">
-    <h2>Contacto / Solicitar acceso a la API</h2>
-    <form action="https://formspree.io/f/mblknkbk" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <textarea name="mensaje" placeholder="Mensaje o motivo de interés..." required></textarea>
-      <button type="submit">Enviar</button>
+  <section id="contacto" style="padding: 2rem 0; background-color: #f9f9f9;">
+  <div style="max-width: 600px; margin: auto;">
+    <h2 style="text-align: center;">Contacto</h2>
+    <p style="text-align: center;">¿Tienes dudas, propuestas o quieres integrar VERYFIA? Escríbenos:</p>
+
+    <form
+      action="https://formspree.io/f/mblknkbk"
+      method="POST"
+      style="display: flex; flex-direction: column; gap: 1rem;"
+    >
+      <label>
+        Tu email:
+        <input type="email" name="email" required
+               style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
+      </label>
+
+      <label>
+        Tu mensaje:
+        <textarea name="message" rows="5" required
+                  style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;"></textarea>
+      </label>
+
+      <button type="submit"
+              style="padding: 0.75rem; background-color: #0084ff; color: white; border: none; cursor: pointer;">
+        Enviar mensaje
+      </button>
     </form>
-  </section>
+  </div>
+</section>
+
 
   <footer>
     <p>© 2025 VERYFIA | Proyecto en desarrollo</p>

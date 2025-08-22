@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VERYFIA - Certificación de Archivos IA</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f8f8f8;
-      color: #222;
-    }
-    h1 {
-      color: #1565c0;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VERYFIA – Verificación de archivos IA</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>VERYFIA</h1>
-  <p>✔️ Certificación de archivos generados por IA</p>
-  <p>🚀 Conecta tu IA con nuestra API y cumple la ley sin esfuerzo</p>
-  <p>📎 Archivos sellados con hash, Merkle Tree y anclaje blockchain</p>
-  <p>📄 Genera certificados PDF verificables</p>
-  <p>📩 Contacto: <a href="mailto:contacto@veryfia.com">contacto@veryfia.com</a></p>
+  <header>
+    <h1>🔒 VERYFIA</h1>
+    <p>Tu solución para cumplir con las leyes de transparencia en contenido generado por inteligencia artificial.</p>
+    <a href="#contacto" class="btn">Solicita acceso a la API</a>
+  </header>
+
+  <section id="que-es">
+    <h2>¿Qué es VERYFIA?</h2>
+    <p>VERYFIA es un sistema de certificación de archivos generados por IA. Permite marcar documentos, imágenes o audios desde el momento de su creación, generando un hash único e inalterable que se registra en blockchain.</p>
+  </section>
+
+  <section id="beneficios">
+    <h2>¿Por qué usarlo?</h2>
+    <ul>
+      <li>✅ Cumple con futuras leyes de trazabilidad de contenido IA</li>
+      <li>✅ Registro seguro e inmutable mediante blockchain</li>
+      <li>✅ Integración fácil vía API REST</li>
+      <li>✅ Marca de tiempo automática</li>
+    </ul>
+  </section>
+
+  <section id="como-funciona">
+    <h2>¿Cómo funciona?</h2>
+    <p>Las IA o servicios conectados envían el archivo o su hash a VERYFIA al generarlo. Nuestro sistema lo registra y lo sella automáticamente en la red blockchain.</p>
+    <img src="https://dummyimage.com/600x300/ccc/000&text=Diagrama+de+funcionamiento" alt="Diagrama explicativo">
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto / Solicitar acceso a la API</h2>
+    <form action="https://formsubmit.co/tucorreo@example.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" placeholder="Mensaje o motivo de interés..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 VERYFIA | Proyecto en desarrollo</p>
+  </footer>
 </body>
 </html>

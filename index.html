@@ -37,7 +37,64 @@
   <section id="como-funciona">
     <h2>¿Cómo funciona?</h2>
     <p>Las IA o servicios conectados envían el archivo o su hash a VERYFIA al generarlo. Nuestro sistema lo registra y lo sella automáticamente en la red blockchain.</p>
-    <img src="https://dummyimage.com/600x300/ccc/000&text=Diagrama+de+funcionamiento" alt="Diagrama explicativo">
+
+    <!-- Diagrama SVG embebido (responsive, sin dependencias externas) -->
+    <div class="diagram" style="max-width:940px;margin:1.5rem auto;">
+      <svg viewBox="0 0 940 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d6efd"/>
+          </marker>
+          <linearGradient id="card" x1="0" x2="1">
+            <stop offset="0" stop-color="#f8fafc"/>
+            <stop offset="1" stop-color="#eef2ff"/>
+          </linearGradient>
+          <style>
+            .box { fill: url(#card); stroke:#cbd5e1; stroke-width:1.2; rx:10; }
+            .title { font: 700 14px system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; fill:#111827; }
+            .sub { font: 12px system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; fill:#374151; }
+            .arrow { stroke:#0d6efd; stroke-width:2.2; marker-end:url(#arrow); }
+          </style>
+        </defs>
+
+        <!-- 1: Origen -->
+        <rect class="box" x="20"  y="50" width="160" height="120"/>
+        <text class="title" x="100" y="90" text-anchor="middle">IA / Servicio</text>
+        <text class="sub"   x="100" y="112" text-anchor="middle">Genera archivo</text>
+        <text class="sub"   x="100" y="130" text-anchor="middle">o calcula SHA-256</text>
+
+        <!-- 2: VERYFIA API -->
+        <rect class="box" x="210" y="50" width="180" height="120"/>
+        <text class="title" x="300" y="90" text-anchor="middle">VERYFIA API</text>
+        <text class="sub"   x="300" y="112" text-anchor="middle">/upload o /api/register</text>
+        <text class="sub"   x="300" y="130" text-anchor="middle">Valida y registra</text>
+
+        <!-- 3: Lote / Merkle -->
+        <rect class="box" x="420" y="50" width="180" height="120"/>
+        <text class="title" x="510" y="90" text-anchor="middle">Lote / Merkle</text>
+        <text class="sub"   x="510" y="112" text-anchor="middle">Agrupa hashes</text>
+        <text class="sub"   x="510" y="130" text-anchor="middle">Merkle Root</text>
+
+        <!-- 4: Blockchain -->
+        <rect class="box" x="630" y="50" width="140" height="120"/>
+        <text class="title" x="700" y="90" text-anchor="middle">Polygon</text>
+        <text class="sub"   x="700" y="112" text-anchor="middle">Tx on-chain</text>
+        <text class="sub"   x="700" y="130" text-anchor="middle">Marca de tiempo</text>
+
+        <!-- 5: Verificación -->
+        <rect class="box" x="800" y="50" width="120" height="120"/>
+        <text class="title" x="860" y="90" text-anchor="middle">Verificación</text>
+        <text class="sub"   x="860" y="112" text-anchor="middle">Polygonscan /</text>
+        <text class="sub"   x="860" y="130" text-anchor="middle">/proof /pdf /history</text>
+
+        <!-- Flechas -->
+        <line class="arrow" x1="180" y1="110" x2="210" y2="110"/>
+        <line class="arrow" x1="390" y1="110" x2="420" y2="110"/>
+        <line class="arrow" x1="600" y1="110" x2="630" y2="110"/>
+        <line class="arrow" x1="770" y1="110" x2="800" y2="110"/>
+      </svg>
+    </div>
+    <!-- Fin diagrama -->
   </section>
 
   <section id="contacto" style="padding: 2rem 0; background-color: #f9f9f9;">
@@ -81,4 +138,6 @@
   </footer>
 </body>
 </html>
+
+
 

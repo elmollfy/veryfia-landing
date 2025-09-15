@@ -16,12 +16,18 @@
     h1,h2,h3 { scroll-margin-top: 80px; }
     .endpoint { margin-top: 1.5rem; }
     .pill { display:inline-block; font-size:.8rem; padding:.2rem .5rem; border-radius:999px; background:#eef2ff; color:#3730a3; margin-left:.5rem;}
+    .note { padding:.75rem 1rem; background:#eef2ff; border:1px solid #c7d2fe; border-radius:8px; margin:1rem 0; }
   </style>
 </head>
 <body>
   <div class="page">
     <h1>📄 VERYFIA API Docs</h1>
     <p class="muted">Guía para integrar la certificación en blockchain de archivos generados por IA.</p>
+
+    <div class="note">
+      <strong>Base URL de la API:</strong>
+      <code>https://veryfia-web.onrender.com</code>
+    </div>
 
     <h2 id="indice">Índice</h2>
     <ul class="toc">
@@ -51,9 +57,20 @@
     <div class="endpoint">
       <h3>POST /api/register <span class="pill">application/json</span></h3>
       <p>Registra directamente el <code>hash</code> SHA-256 de un archivo (sin subir el archivo).</p>
-      <pre><button class="copy">copiar</button><code>curl -X POST https://veryfia-web.onrender.com/api/register ^
+      <pre><button class="copy">copiar</button><code># Windows CMD
+curl -X POST https://veryfia-web.onrender.com/api/register ^
   -H "Content-Type: application/json" ^
-  -d "{{"{"}}"api_key":"clave456","file_hash":"2fd889940a0da04aab43da4f76d99c244d7607980b8ddbab8f71f655b68d5091"{{"}"}}</code></pre>
+  -d "{\"api_key\":\"clave456\",\"file_hash\":\"2fd889940a0da04aab43da4f76d99c244d7607980b8ddbab8f71f655b68d5091\"}"
+
+# Windows PowerShell
+curl -Method POST https://veryfia-web.onrender.com/api/register `
+  -Headers @{ "Content-Type" = "application/json" } `
+  -Body '{"api_key":"clave456","file_hash":"2fd889940a0da04aab43da4f76d99c244d7607980b8ddbab8f71f655b68d5091"}'
+
+# macOS / Linux
+curl -X POST https://veryfia-web.onrender.com/api/register \
+  -H 'Content-Type: application/json' \
+  -d '{"api_key":"clave456","file_hash":"2fd889940a0da04aab43da4f76d99c244d7607980b8ddbab8f71f655b68d5091"}'</code></pre>
     </div>
 
     <div class="endpoint">

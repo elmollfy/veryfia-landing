@@ -1,28 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>VERYFIA – Documentación de la API</title>
-  <meta name="description" content="Guía para integrar la API de VERYFIA.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Usa la misma hoja de estilos de tu landing -->
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page { max-width: 920px; margin: 2rem auto; padding: 0 1rem; }
+    .toc a { text-decoration: none; }
+    pre { position: relative; padding: 1rem; overflow: auto; border-radius: 8px; background: #0f172a; color: #e2e8f0; }
+    pre .copy { position: absolute; top: .5rem; right: .5rem; border: 0; padding: .35rem .6rem; cursor: pointer; }
+    code { white-space: pre-wrap; }
+    .muted { color: #64748b; font-size: .95rem; }
+    h1,h2,h3 { scroll-margin-top: 80px; }
+    .endpoint { margin-top: 1.5rem; }
+    .pill { display:inline-block; font-size:.8rem; padding:.2rem .5rem; border-radius:999px; background:#eef2ff; color:#3730a3; margin-left:.5rem;}
+  </style>
 </head>
 <body>
-  <div class="container" style="max-width:900px;margin:2rem auto;">
+  <div class="page">
     <h1>📄 VERYFIA API Docs</h1>
-    <p>Guía para integrar la certificación blockchain de archivos generados por IA.</p>
+    <p class="muted">Guía para integrar la certificación en blockchain de archivos generados por IA.</p>
 
-    <h2>Endpoints</h2>
-    <ul>
-      <li><code>POST /upload</code></li>
-      <li><code>POST /api/register</code></li>
-      <li><code>GET /proof/&lt;hash&gt;</code></li>
-      <li><code>GET /pdf/&lt;hash&gt;</code></li>
-      <li><code>GET /history/&lt;hash&gt;</code></li>
+    <h2 id="indice">Índice</h2>
+    <ul class="toc">
+      <li><a href="#auth">1. Autenticación</a></li>
+      <li><a href="#endpoints">2. Endpoints</a></li>
+      <li><a href="#mejoras">3. Próximas mejoras</a></li>
+      <li><a href="#contacto">4. Contacto</a></li>
     </ul>
 
-    <p>Ejemplos con tu backend: <code>https://veryfia-web.onrender.com</code></p>
+    <h2 id="auth">1) Autenticación</h2>
+    <p>Usa tu <strong>API Key</strong>:</p>
+    <ul>
+      <li><code>/upload</code> → <em>opcional</em> (recomendado para uso programático).</li>
+      <li><code>/api/register</code> → <strong>obligatorio</strong>.</li>
+    </ul>
+
+    <h2 id="endpoints">2) Endpoints</h2>
+
+    <div class="endpoint">
+      <h3>POST /upload <span class="pill">multipart/form-data</span></h3>
+      <p>Sube un archivo para certificarlo (máx. 5MB).</p>
+      <pre><button class="copy">copiar</button><code>curl -X POST https://veryfia-web.onrender.com/upload ^
+  -F "file=@miarchivo.pdf" ^
+  -F "api_key=clave456"</code></pre>
+    </div>
+
+    <div class="endpoint">
+      <h3>POST /api/register <span class="pill">application/json</span></h3>
+      <p>Registra directamente el <code>hash</code> SHA-256 de un archivo (sin subir el archivo).</p>
+      <pre><button class="copy">copiar</button><code>curl -X POST https://veryfia-web.onrender.com/api/register ^
+  -H "Content-Type: application/json" ^
+  -d "{{"{"}}"api_key":"clave456","file_hash":"2fd889940a0da04aab43da4f76d99c244d7607980b8ddbab8f71f655b68d5091"{{"}"}}</code></pre>
+    </div>
+
+    <div class="endpoint">
+      <h3>GET /proof/&lt;hash&gt;</h3>
+      <p>Devuelve JSON con <code>file_hash</code>, <code>merkleRoot</code>, <code>txHash</code> y <code>anchoredAt</code>.</p>
+      <pre><button class="copy">copiar</button><code>curl -s https://veryfia-web.onrender.com/proof/2fd889940a0... | jq .</code></pre>
+    </div>
+
+    <div class="endpoint">
+      <h3>GET /pdf/&lt;hash&gt;</h3>
+      <p>Descarga el certificado PDF.</p>
+      <pre><button class="copy">copiar</button><code>curl -L -o certificado.pdf https://veryfia-web.onrender.com/pdf/2fd889940a0...</code></pre>
+    </div>
+
+    <div class="endpoint">
+      <h3>GET /history/&lt;hash&gt;</h3>
+      <p>Página HTML con historial del archivo (hash, merkle root, fecha, TX).</p>
+      <pre><button class="copy">copiar</button><code>https://veryfia-web.onrender.com/history/2fd889940a0...</code></pre>
+    </div>
+
+    <h2 id="mejoras">3) Próximas mejoras</h2>
+    <ul>
+      <li>Guardado y visualización del Merkle path real.</li>
+      <li>Panel para developers con estadísticas de uso.</li>
+    </ul>
+
+    <h2 id="contacto">4) Contacto</h2>
+    <p>Solicita tu API Key: <a href="mailto:tu_email@ejemplo.com">tu_email@ejemplo.com</a></p>
 
     <p><a href="index.html">⬅️ Volver a la home</a></p>
   </div>
+
+  <script>
+    // Botones "copiar" para los snippets
+    document.querySelectorAll('pre .copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const code = btn.parentElement.querySelector('code').innerText;
+        navigator.clipboard.writeText(code);
+        const old = btn.textContent;
+        btn.textContent = "copiado ✓";
+        setTimeout(()=> btn.textContent = old, 1200);
+      });
+    });
+  </script>
 </body>
 </html>
+

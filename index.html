@@ -1,159 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VERYFIA – Verificación de archivos IA</title>
-  <meta name="description" content="Certifica archivos generados por IA con anclaje en blockchain. API simple, verificación pública.">
-
-<!-- Open Graph / Social -->
-<meta property="og:title" content="VERYFIA – Verificación de archivos IA">
-<meta property="og:description" content="Certifica archivos generados por IA con anclaje en blockchain. API simple, verificación pública.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://veryfia-landing-xeqs.onrender.com/">
-<meta property="og:image" content="https://placehold.co/1200x630?text=VERYFIA">
-
-<!-- Favicon -->
-<link rel="icon" href="/favicon.ico">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERYFIA | Verifica tus archivos generados por IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #1c1c1e;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #1c1c1e;
+            letter-spacing: -0.5px;
+        }
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .hero {
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background-color: #f2f2f7;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        .cta-button {
+            background-color: #000;
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border: none;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background-color: #fff;
+        }
+        .feature {
+            max-width: 300px;
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 0 1px #e0e0e0;
+            text-align: center;
+        }
+        .feature h3 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+        .steps {
+            padding: 4rem 2rem;
+            background-color: #f2f2f7;
+            text-align: center;
+        }
+        .steps h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .step-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .step {
+            max-width: 250px;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 0 1px #e0e0e0;
+        }
+        .step span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        footer {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #888;
+        }
+        footer a {
+            color: #888;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>🔒 VERYFIA</h1>
-    <p>Tu solución para cumplir con las leyes de transparencia en contenido generado por inteligencia artificial.</p>
-    <a href="#contacto" class="btn">Solicita acceso a la API</a>
-  </header>
+    <header>
+        <div class="logo">VERYFIA</div>
+        <nav>
+            <a href="#features">Ventajas</a>
+            <a href="#how">Cómo funciona</a>
+            <a href="/docs.html">Documentación</a>
+        </nav>
+    </header>
 
-  <section id="que-es">
-    <h2>¿Qué es VERYFIA?</h2>
-    <p>VERYFIA es un sistema de certificación de archivos generados por IA. Permite marcar documentos, imágenes o audios desde el momento de su creación, generando un hash único e inalterable que se registra en blockchain.</p>
-  </section>
+    <section class="hero">
+        <h1>Verifica tus archivos generados por IA</h1>
+        <p>Crea un sello inmutable en blockchain. Rápido, seguro y transparente.</p>
+        <a href="https://veryfia-web.onrender.com/"><button class="cta-button">Probar ahora</button></a>
+    </section>
 
-  <section id="sobre">
-    <h1>VERYFIA: Tu archivo, tu prueba</h1>
-    <p>VERYFIA es una herramienta que sella e identifica archivos generados por inteligencia artificial. Nos anticipamos a la legislación que exigirá marcar este tipo de contenidos, proporcionando una verificación fiable, trazable y difícil de falsificar.</p>
-    <p>Gracias a nuestra integración con blockchain, cualquier IA puede conectarse directamente a VERYFIA y registrar automáticamente sus archivos al generarlos. Nos posicionamos como la capa de confianza entre creadores de contenido y usuarios.</p>
-  </section>
+    <section class="features" id="features">
+        <div class="feature">
+            <span>✅</span>
+            <h3>Verificable</h3>
+            <p>Tu archivo queda marcado con su huella digital (hash).</p>
+        </div>
+        <div class="feature">
+            <span>🔐</span>
+            <h3>Inmutable</h3>
+            <p>El hash se registra en la blockchain, imposible de alterar.</p>
+        </div>
+        <div class="feature">
+            <span>⚡</span>
+            <h3>Rápido</h3>
+            <p>Certificación en segundos con tecnología descentralizada.</p>
+        </div>
+    </section>
 
-  <section id="beneficios">
-    <h2>¿Por qué usarlo?</h2>
-    <ul>
-      <li> Cumple con futuras leyes de trazabilidad de contenido IA</li>
-      <li> Registro seguro e inmutable mediante blockchain</li>
-      <li> Integración fácil vía API REST</li>
-      <li> Marca de tiempo automática</li>
-    </ul>
-  </section>
+    <section class="steps" id="how">
+        <h2>¿Cómo funciona?</h2>
+        <div class="step-list">
+            <div class="step">
+                <span>1</span>
+                <p>Subes el archivo que quieres certificar.</p>
+            </div>
+            <div class="step">
+                <span>2</span>
+                <p>Calculamos su hash (SHA-256).</p>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <p>Se registra en blockchain y se genera un PDF de certificación.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="como-funciona">
-    <h2>¿Cómo funciona?</h2>
-    <p>Las IA o servicios conectados envían el archivo o su hash a VERYFIA al generarlo. Nuestro sistema lo registra y lo sella automáticamente en la red blockchain.</p>
-
-    <!-- Diagrama SVG embebido (responsive, sin dependencias externas) -->
-    <div class="diagram" style="max-width:940px;margin:1.5rem auto;">
-      <svg viewBox="0 0 940 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-        <defs>
-          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d6efd"/>
-          </marker>
-          <linearGradient id="card" x1="0" x2="1">
-            <stop offset="0" stop-color="#f8fafc"/>
-            <stop offset="1" stop-color="#eef2ff"/>
-          </linearGradient>
-          <style>
-            .box { fill: url(#card); stroke:#cbd5e1; stroke-width:1.2; rx:10; }
-            .title { font: 700 14px system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; fill:#111827; }
-            .sub { font: 12px system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial; fill:#374151; }
-            .arrow { stroke:#0d6efd; stroke-width:2.2; marker-end:url(#arrow); }
-          </style>
-        </defs>
-
-        <!-- 1: Origen -->
-        <rect class="box" x="20"  y="50" width="160" height="120"/>
-        <text class="title" x="100" y="90" text-anchor="middle">IA / Servicio</text>
-        <text class="sub"   x="100" y="112" text-anchor="middle">Genera archivo</text>
-        <text class="sub"   x="100" y="130" text-anchor="middle">o calcula SHA-256</text>
-
-        <!-- 2: VERYFIA API -->
-        <rect class="box" x="210" y="50" width="180" height="120"/>
-        <text class="title" x="300" y="90" text-anchor="middle">VERYFIA API</text>
-        <text class="sub"   x="300" y="112" text-anchor="middle">/upload o /api/register</text>
-        <text class="sub"   x="300" y="130" text-anchor="middle">Valida y registra</text>
-
-        <!-- 3: Lote / Merkle -->
-        <rect class="box" x="420" y="50" width="180" height="120"/>
-        <text class="title" x="510" y="90" text-anchor="middle">Lote / Merkle</text>
-        <text class="sub"   x="510" y="112" text-anchor="middle">Agrupa hashes</text>
-        <text class="sub"   x="510" y="130" text-anchor="middle">Merkle Root</text>
-
-        <!-- 4: Blockchain -->
-        <rect class="box" x="630" y="50" width="140" height="120"/>
-        <text class="title" x="700" y="90" text-anchor="middle">Polygon</text>
-        <text class="sub"   x="700" y="112" text-anchor="middle">Tx on-chain</text>
-        <text class="sub"   x="700" y="130" text-anchor="middle">Marca de tiempo</text>
-
-        <!-- 5: Verificación -->
-        <rect class="box" x="800" y="50" width="120" height="120"/>
-        <text class="title" x="860" y="90" text-anchor="middle">Verificación</text>
-        <text class="sub"   x="860" y="112" text-anchor="middle">Polygonscan /</text>
-        <text class="sub"   x="860" y="130" text-anchor="middle">/proof /pdf /history</text>
-
-        <!-- Flechas -->
-        <line class="arrow" x1="180" y1="110" x2="210" y2="110"/>
-        <line class="arrow" x1="390" y1="110" x2="420" y2="110"/>
-        <line class="arrow" x1="600" y1="110" x2="630" y2="110"/>
-        <line class="arrow" x1="770" y1="110" x2="800" y2="110"/>
-      </svg>
-    </div>
-    <!-- Fin diagrama -->
-  </section>
-
-  <section id="contacto" style="padding: 2rem 0; background-color: #f9f9f9;">
-    <div style="max-width: 600px; margin: auto;">
-      <h2 style="text-align: center;">Contacto</h2>
-      <p style="text-align: center;">¿Tienes dudas, propuestas o quieres integrar VERYFIA? Escríbenos:</p>
-
-      <form
-        action="https://formspree.io/f/mblknkbk"
-        method="POST"
-        style="display: flex; flex-direction: column; gap: 1rem;"
-      >
-        <label>
-          Tu email:
-          <input type="email" name="email" required
-                 style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;">
-        </label>
-
-        <label>
-          Tu mensaje:
-          <textarea name="message" rows="5" required
-                    style="width: 100%; padding: 0.5rem; margin-top: 0.25rem;"></textarea>
-        </label>
-
-        <button type="submit"
-                style="padding: 0.75rem; background-color: #0084ff; color: white; border: none; cursor: pointer;">
-          Enviar mensaje
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Enlace a la documentación de la API -->
-  <hr>
-  <p style="text-align:center; margin: 1.5rem 0;">
-    <a href="docs.html">📄 Documentación de la API</a>
-  </p>
-
-  <footer>
-    <p style="text-align:center; margin: .75rem 0;">
-  <a href="terms.html">Términos de servicio</a> ·
-  <a href="privacy.html">Política de privacidad</a>
-</p>
-    <p>© 2025 VERYFIA | Proyecto en desarrollo</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 VERYFIA</p>
+        <a href="/privacy.html">Privacidad</a>
+        <a href="/terms.html">Términos</a>
+        <a href="/docs.html">Documentación</a>
+    </footer>
 </body>
 </html>
+
 
 
 

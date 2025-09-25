@@ -119,11 +119,11 @@ footer a {
     transform-origin: center;
 }
 
-/* --- added: tiny helper for logo image --- */
-.logo-img{
-  width:28px; height:28px; border-radius:50%;
-  display:inline-block; vertical-align:middle; margin-right:8px;
-}
+/* --- ensure header logo image is visible and aligned --- */
+header .logo { display:flex; align-items:center; gap:8px; }
+header .logo img { display:inline-block !important; width:28px; height:28px; border-radius:50%; margin-right:8px; vertical-align:middle; }
+
+
 
 
 

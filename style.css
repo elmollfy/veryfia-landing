@@ -119,4 +119,13 @@ footer a {
     transform-origin: center;
 }
 
+/* --- added: tiny helper for logo image --- */
+.logo-img{
+  width:28px; height:28px; border-radius:50%;
+  display:inline-block; vertical-align:middle; margin-right:8px;
+}
+
+
+
+
 
